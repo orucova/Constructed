@@ -1,0 +1,110 @@
+.header{
+    padding: 20px 0;
+    width: 100%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    .container{
+        .row{
+            align-items: center;
+            gap: 32px;
+            .logo{
+                a{
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 20px;
+                    color: #252837;
+                    font-weight: 700;
+                }
+            }
+            .navBar{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .navList{
+                    display: flex;
+                    align-items: center;
+                    .navItem{
+                        position: relative;
+                        &:hover{
+                            a{
+                                color: #eb1c24;
+                            }
+                            .dropDown{
+                                opacity: 1;
+                                visibility: visible;
+                                top: 100%;
+                            }
+                        }
+                        a{
+                            font-size: 14px;
+                            padding:10px 15px;
+                            color: rgba(0, 0, 0, 0.7);
+                            &.active{
+                                color: #eb1c24;
+                            }
+                        }
+                        .dropDown{
+                            opacity: 0;
+                            visibility: hidden;
+                            position: absolute;
+                            top: 150%;
+                            background-color: #fff;
+                            box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+                            padding: 20px 0;
+                            transition: .1s ease;
+                            .dropItem{
+                                padding: 5px 20px;
+                                a{
+                                    font-size: 14px;
+                                    color: #000;
+                                }
+                            }
+                        }
+                    }
+                }
+                .tel{
+                    font-size: 14px;
+                    padding:10px 15px;
+                    color: #eb1c24;
+                    font-weight: 700;
+                    a{
+                        color: #eb1c24;
+                    }
+                }
+            }
+            .burgerMenu{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px){
+    .header{
+        .container{
+            .row{
+                .navBar{
+                    justify-content: flex-end;
+                    .navList{
+                        display: none;
+                    }
+                }
+                .burgerMenu{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .header{
+        .container{
+            .row{
+                .navBar{
+                    .tel{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
